@@ -17,7 +17,7 @@ export class QueryData extends React.Component<any, CurrentQueryState> {
     var self = this;
     return (
       <div>
-        <h1>Currently running queries (Pinal Dave query)</h1>
+        <h1>Currently running queries</h1>
         <button
           type="button"
           className="btn btn-primary az-margin-bottom"
