@@ -1,0 +1,9 @@
+C:\Development\Lucil\SqlAzureMonitor\Data.Abstractions\bin\Debug\netstandard1.4\Data.Abstractions.deps.json
+C:\Development\Lucil\SqlAzureMonitor\Data.Abstractions\bin\Debug\netstandard1.4\Data.Abstractions.dll
+C:\Development\Lucil\SqlAzureMonitor\Data.Abstractions\bin\Debug\netstandard1.4\Data.Abstractions.pdb
+C:\Development\Lucil\SqlAzureMonitor\Data.Abstractions\bin\Debug\netstandard1.4\Models.dll
+C:\Development\Lucil\SqlAzureMonitor\Data.Abstractions\bin\Debug\netstandard1.4\Models.pdb
+C:\Development\Lucil\SqlAzureMonitor\Data.Abstractions\obj\Debug\netstandard1.4\Data.Abstractions.csprojResolveAssemblyReference.cache
+C:\Development\Lucil\SqlAzureMonitor\Data.Abstractions\obj\Debug\netstandard1.4\Data.Abstractions.AssemblyInfo.cs
+C:\Development\Lucil\SqlAzureMonitor\Data.Abstractions\obj\Debug\netstandard1.4\Data.Abstractions.dll
+C:\Development\Lucil\SqlAzureMonitor\Data.Abstractions\obj\Debug\netstandard1.4\Data.Abstractions.pdb
