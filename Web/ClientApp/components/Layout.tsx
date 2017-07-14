@@ -29,7 +29,7 @@ export class Layout extends React.Component<LayoutProps, void> {
                     <div className="container-fluid">
                         <div className="row">
                             <div className="col-sm-12 text-right">
-                                <a  href="/terms">Terms and conditions</a>
+                                <a  href="https://raw.githubusercontent.com/lucil/SqlAzureMonitor/master/TERMS.txt">Terms and conditions</a>
                                 <a className="az-padding-left" href="https://github.com/lucil/SqlAzureMonitor" target="_blank">Github</a>
                                 <a className="az-padding-left" href="http://pcodelab.com" target="_blank">pCodeLab</a>
                                 
