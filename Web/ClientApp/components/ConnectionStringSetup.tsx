@@ -36,11 +36,16 @@ export class ConnectionStringSetup extends React.Component<any, any> {
                     }}
                   >Start monitoring</button>
                 </div>
+                <div className="bs-callout bs-callout-primary text-left">
+                    <span> Please make sure you authorize application public ip <strong>{this.state.ip}</strong> in your Sql Azure instance firewall.</span> Check
+                    <a href="https://docs.microsoft.com/en-us/azure/sql-database/sql-database-firewall-configure" target="_blank"> Sql Azure firewall docs</a> for more information.
+                  </div>
+
                 {this.state.connectionError ?
                   <div className="bs-callout bs-callout-danger text-left">
                     <h4>Failed to connect to database</h4>
                     <span>Plaese verify that the connection string is correct.</span><br />
-                    <span> Plaese make sure you give access <strong>{this.state.ip}</strong> to the Sql Azure instance.</span> Check
+                    <span> Please make sure you have added authorize application public ip <strong>{this.state.ip}</strong> in your Sql Azure instance firewall.</span> Check
                     <a href="https://docs.microsoft.com/en-us/azure/sql-database/sql-database-firewall-configure" target="_blank"> Sql Azure firewall docs</a> for more information.
                   </div> : null
                 }

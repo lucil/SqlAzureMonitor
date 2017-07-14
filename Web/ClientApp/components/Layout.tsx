@@ -30,7 +30,7 @@ export class Layout extends React.Component<LayoutProps, void> {
                         <div className="row">
                             <div className="col-sm-12 text-right">
                                 <a  href="/terms">Terms and conditions</a>
-                                <a className="az-padding-left">Github</a>
+                                <a className="az-padding-left" href="https://github.com/lucil/SqlAzureMonitor" target="_blank">Github</a>
                                 <a className="az-padding-left" href="http://pcodelab.com" target="_blank">pCodeLab</a>
                                 
                             </div>

@@ -1,0 +1,21 @@
+Welcome to Sql Azure monitor terms and conditions. 
+
+If you continue to browse or click the "Start monitoring" button and use this application, you are agreeing to comply with and be bound by the following terms and conditions of use.
+If you disagree with any part of these terms and conditions, please do not use this application.
+The use of this application is subject to the following terms of use:
+
+1. 	The content of the pages of this application is for your general information and use only. 
+	It is subject to change without notice.
+	
+2. 	Neither we nor any third parties provide any warranty or guarantee as to the accuracy, timeliness, performance, 
+	completeness or suitability of the information found on this application for any particular purpose. 
+	You acknowledge that such information and materials may contain inaccuracies or errors.
+	
+3.	Your use of any information or materials on this application is entirely at your own risk. 
+	It shall be your own responsibility to ensure that any products, services or information available through this application meet your specific requirements.
+
+4. 	From time to time, this application may also include links to other applications. 
+	These links are provided for your convenience to provide further information. 
+	We have no responsibility for the content of the linked application(s).
+
+5.  Collected data will be used for monitoring purposes only. 
