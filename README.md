@@ -1,7 +1,7 @@
 ## Sql Azure monitor
 
 A fast way to view how your sql azure database is performing.
-[Show me the magic](http://sqlazuremonitor.azurewebsites.net/)
+[Show me the magic!](http://sqlazuremonitor.azurewebsites.net/)
 
 ## License
 
