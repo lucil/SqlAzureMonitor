@@ -67,7 +67,7 @@ export class QueryData extends React.Component<any, CurrentQueryState> {
                     }}
                     className="glyphicon glyphicon-off text-danger"
                     data-toggle="tooltip"
-                    title="Uccidi"
+                    title="Kill it"
                   />
                 </td>
               </tr>
@@ -136,7 +136,7 @@ export class QueryData extends React.Component<any, CurrentQueryState> {
                       }}
                       className="glyphicon glyphicon-off text-danger"
                       data-toggle="tooltip"
-                      title="Uccidi"
+                      title="Kill it"
                     />
                   </td>
                 </tr>

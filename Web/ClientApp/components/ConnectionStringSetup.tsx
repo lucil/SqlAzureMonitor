@@ -5,7 +5,7 @@ export class ConnectionStringSetup extends React.Component<any, any> {
 
   constructor() {
     super();
-    this.state = { connectionString: "", connectionError: false };
+    this.state = { connectionString: "", connectionError: false, errorType: 0 };
 
     this.handleChange = this.handleChange.bind(this);
     this.getServerIpAddress();
@@ -37,16 +37,20 @@ export class ConnectionStringSetup extends React.Component<any, any> {
                   >Start monitoring</button>
                 </div>
                 <div className="bs-callout bs-callout-primary text-left">
-                    <span> Please make sure you authorize application public ip <strong>{this.state.ip}</strong> in your Sql Azure instance firewall.</span> Check
+                  <span> Please make sure you authorize application public ip <strong>{this.state.ip}</strong> in your Sql Azure instance firewall.</span> Check
                     <a href="https://docs.microsoft.com/en-us/azure/sql-database/sql-database-firewall-configure" target="_blank"> Sql Azure firewall docs</a> for more information.
                   </div>
 
                 {this.state.connectionError ?
                   <div className="bs-callout bs-callout-danger text-left">
                     <h4>Failed to connect to database</h4>
+                    {this.state.errorType == 3 ? 
+                      <div>The connection string you entered is not a valid Sql Azure connection string.</div> : null
+                    }
                     <span>Plaese verify that the connection string is correct.</span><br />
                     <span> Please make sure you have added authorize application public ip <strong>{this.state.ip}</strong> in your Sql Azure instance firewall.</span> Check
                     <a href="https://docs.microsoft.com/en-us/azure/sql-database/sql-database-firewall-configure" target="_blank"> Sql Azure firewall docs</a> for more information.
+                    
                   </div> : null
                 }
               </div>
@@ -80,7 +84,10 @@ export class ConnectionStringSetup extends React.Component<any, any> {
           window.location.assign('/realtime');
           break;
         case 2:
-          self.setState({ connectionString: "", connectionError: true })
+          self.setState({ connectionError: true, errorType: 2 });
+          break;
+        case 3:
+          self.setState({ connectionError: true, errorType: 3 });
           break;
         default:
           throw "Unknown connection string check result.";
