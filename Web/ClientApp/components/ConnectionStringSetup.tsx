@@ -5,10 +5,11 @@ export class ConnectionStringSetup extends React.Component<any, any> {
 
   constructor() {
     super();
-    this.state = { connectionString: "", connectionError: false, errorType: 0 };
+    this.state = { connectionString: "", connectionError: false, isAzureEnvironment: false, errorType: 0 };
 
     this.handleChange = this.handleChange.bind(this);
     this.getServerIpAddress();
+    this.checkAzureWebsite();
   }
 
   handleChange(event) {
@@ -36,21 +37,20 @@ export class ConnectionStringSetup extends React.Component<any, any> {
                     }}
                   >Start monitoring</button>
                 </div>
-                <div className="bs-callout bs-callout-primary text-left">
-                  <span> Please make sure you authorize application public ip <strong>{this.state.ip}</strong> in your Sql Azure instance firewall.</span> Check
+                {!this.state.isAzureEnvironment ?
+                  <div className="bs-callout bs-callout-primary text-left">
+                    <span> Please make sure you authorize application public ip <strong>{this.state.ip}</strong> in your Sql Azure instance firewall.</span> Check
                     <a href="https://docs.microsoft.com/en-us/azure/sql-database/sql-database-firewall-configure" target="_blank"> Sql Azure firewall docs</a> for more information.
                   </div>
+                  : null}
 
                 {this.state.connectionError ?
                   <div className="bs-callout bs-callout-danger text-left">
                     <h4>Failed to connect to database</h4>
-                    {this.state.errorType == 3 ? 
+                    {this.state.errorType == 3 ?
                       <div>The connection string you entered is not a valid Sql Azure connection string.</div> : null
                     }
-                    <span>Plaese verify that the connection string is correct.</span><br />
-                    <span> Please make sure you have added authorize application public ip <strong>{this.state.ip}</strong> in your Sql Azure instance firewall.</span> Check
-                    <a href="https://docs.microsoft.com/en-us/azure/sql-database/sql-database-firewall-configure" target="_blank"> Sql Azure firewall docs</a> for more information.
-                    
+                    <span>Plaese verify that the connection string is correct.</span>
                   </div> : null
                 }
               </div>
@@ -66,7 +66,7 @@ export class ConnectionStringSetup extends React.Component<any, any> {
     var connectionstring = JSON.stringify({
       value: this.state.connectionString
     })
-    axios.post('/api/connectionstring/check', connectionstring, {
+    axios.post('/api/connectionstring/add', connectionstring, {
       headers: {
         "Content-Type": "application/json"
       }
@@ -74,13 +74,6 @@ export class ConnectionStringSetup extends React.Component<any, any> {
       var checkResult = response.data;
       switch (checkResult) {
         case 1:
-
-          axios.post('/api/connectionstring/add', connectionstring, {
-            headers: {
-              "Content-Type": "application/json"
-            }
-          });
-
           window.location.assign('/realtime');
           break;
         case 2:
@@ -101,6 +94,15 @@ export class ConnectionStringSetup extends React.Component<any, any> {
       .get("/api/connectionstring/ip")
       .then(function (response) {
         self.setState({ ip: response.data })
+      });
+  }
+
+  checkAzureWebsite = function(){
+    var self = this;
+    axios
+      .get("/api/connectionstring/isazureenvironment")
+      .then(function (response) {
+        self.setState({ isAzureEnvironment: response.data })
       });
   }
 }

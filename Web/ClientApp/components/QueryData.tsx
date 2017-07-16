@@ -55,7 +55,7 @@ export class QueryData extends React.Component<any, CurrentQueryState> {
                       role="button"
                       className="glyphicon glyphicon-modal-window"
                       data-toggle="tooltip"
-                      title="Visualizza info query"
+                      title="View query info"
                     />
                   </Link>
                 </td>

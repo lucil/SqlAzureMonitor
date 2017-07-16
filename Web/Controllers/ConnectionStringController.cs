@@ -19,16 +19,23 @@ namespace Web.Controllers
             _connectionStringRepository = connectionStringRepository ?? throw new ArgumentNullException(nameof(connectionStringRepository));
         }
 
-        [HttpPost("[action]")]
-        public WellKnownConnectionStringCheckResult Check([FromBody]ConnectionString connectionString)
-        {
-            return _connectionStringRepository.CheckConnectionString(connectionString.Value);
-        }
 
         [HttpPost("[action]")]
-        public void Add([FromBody]ConnectionString connectionString)
+        public WellKnownConnectionStringCheckResult Add([FromBody]ConnectionString connectionString)
         {
-            HttpContext.Session.SetString("ConnectionString", connectionString.Value);
+            var checkConnectionStringResult = _connectionStringRepository.CheckConnectionString(connectionString.Value);
+
+            if(checkConnectionStringResult == WellKnownConnectionStringCheckResult.Ok) { 
+                HttpContext.Session.SetString("ConnectionString", connectionString.Value);
+            }
+
+            return checkConnectionStringResult;
+        }
+
+        [HttpGet("[action]")]
+        public bool IsAzureEnvironment()
+        {
+            return !String.IsNullOrEmpty(Environment.GetEnvironmentVariable("WEBSITE_SITE_NAME"));
         }
 
         [HttpGet("[action]")]
