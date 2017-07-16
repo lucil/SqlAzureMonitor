@@ -13,10 +13,10 @@ export class Layout extends React.Component<LayoutProps, void> {
             <div className='container-fluid'>
                 {!(currentPath == '/') ?
                     <div className='row'>
-                        <div className='col-sm-2'>
+                        <div className='col-sm-3'>
                             <NavMenu />
                         </div>
-                        <div className='col-sm-10'>
+                        <div className='col-sm-9'>
                             {this.props.body}
                         </div>
                     </div>
