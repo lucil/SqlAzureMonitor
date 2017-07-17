@@ -1,0 +1,7 @@
+C:\Development\Lucil\SqlAzureMonitor\Models\bin\Release\netstandard1.4\Models.deps.json
+C:\Development\Lucil\SqlAzureMonitor\Models\bin\Release\netstandard1.4\Models.dll
+C:\Development\Lucil\SqlAzureMonitor\Models\bin\Release\netstandard1.4\Models.pdb
+C:\Development\Lucil\SqlAzureMonitor\Models\obj\Release\netstandard1.4\Models.csprojResolveAssemblyReference.cache
+C:\Development\Lucil\SqlAzureMonitor\Models\obj\Release\netstandard1.4\Models.AssemblyInfo.cs
+C:\Development\Lucil\SqlAzureMonitor\Models\obj\Release\netstandard1.4\Models.dll
+C:\Development\Lucil\SqlAzureMonitor\Models\obj\Release\netstandard1.4\Models.pdb

@@ -1,0 +1,12 @@
+- check user has access to monitor DMV before connection
+- fix mobile visualization
+- react check if connection string is in session and redirect to connectionstring page
+- docs
+	download and install (dotnet cli, package restore)
+	characteristics
+		asp.net core
+		react
+		no database required unless you want to register data
+- How to manage release notes?
+- Index resume
+- Dashboard?

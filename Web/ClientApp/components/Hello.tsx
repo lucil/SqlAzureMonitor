@@ -4,7 +4,7 @@ export class Hello extends React.Component<any, void> {
   public render() {
     return (
       <div>
-        <h1>pod.camp sql azure monitor center</h1>
+        <h1>Sql azure monitor</h1>
         <h2>Facile, facilissimo!!!</h2>
 
         <h3>changelog (26/06/2017)</h3>
