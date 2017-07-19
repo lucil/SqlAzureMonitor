@@ -38,6 +38,7 @@
     "react-chartjs-2": "^2.1.0",
     "react-dropdown": "^1.2.5",
     "react-file-download": "^0.3.4",
+    "react-image": "^1.0.1",
     "react-select": "^1.0.0-rc.5",
     "shortid": "^2.2.8"
   }

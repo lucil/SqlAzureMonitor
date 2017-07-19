@@ -1,5 +1,6 @@
 import * as React from "react";
 import axios from 'axios';
+import Img from 'react-image'
 
 export class ConnectionStringSetup extends React.Component<any, any> {
 
@@ -23,7 +24,7 @@ export class ConnectionStringSetup extends React.Component<any, any> {
           <div className="col-xs-12 col-centered">
             <div className="item">
               <div className="content text-center vcenter">
-                <h2 className="text-center">Sql azure monitor</h2>
+                <div href="/" className="logo"></div>
                 <div role="form">
                   <div className="form-group">
                     <label htmlFor="connstring">Connection string</label>

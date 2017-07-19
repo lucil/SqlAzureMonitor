@@ -15,6 +15,10 @@ module.exports = (env) => {
                 { test: /.*style-loader.*\.jsx?$/, use: 'babel-loader'},
                 { test: /\.(png|woff|woff2|eot|ttf|svg)(\?|$)/, use: 'url-loader?limit=100000' },
                 { test: /\.css(\?|$)/, use: extractCSS.extract(['css-loader']) }
+            ],
+
+            loaders: [
+                { test: /\.(png|jpg|jpeg|gif|svg)$/, loader: 'url-loader?limit=100000' }
             ]
         },
         entry: {
