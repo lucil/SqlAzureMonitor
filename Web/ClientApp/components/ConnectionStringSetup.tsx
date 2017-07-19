@@ -24,7 +24,7 @@ export class ConnectionStringSetup extends React.Component<any, any> {
           <div className="col-xs-12 col-centered">
             <div className="item">
               <div className="content text-center vcenter">
-                <div href="/" className="logo"></div>
+                <div href="/" className="logo az-margin-bottom"></div>
                 <div role="form">
                   <div className="form-group">
                     <label htmlFor="connstring">Connection string</label>
