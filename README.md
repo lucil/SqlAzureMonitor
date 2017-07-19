@@ -3,8 +3,9 @@
 A fast way to view how your sql azure database is performing.
 [Show me the magic!](http://sqlazuremonitor.azurewebsites.net/)
 
-##Logo
-The logo and the favicon are made with love by [G10](https://github.com/zuologio)
+##Logo and favicon
+![alt text](https://github.com/lucil/SqlAzureMonitor/blob/master/Web/ClientApp/images/Logo.png)
+The logo and the favicon were made with love by [G10](https://github.com/zuologio)
 
 ## License
 
