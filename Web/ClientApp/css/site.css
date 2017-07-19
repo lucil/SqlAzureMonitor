@@ -242,4 +242,5 @@
   background-repeat: no-repeat;
   background-position: 50% 50%;
   height: 50px;
+  background-size:contain;
 }
