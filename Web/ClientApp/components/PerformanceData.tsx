@@ -7,8 +7,7 @@ import "react-select/dist/react-select.css";
 
 export class PerformanceData extends React.Component<
   any,
-  PerformanceDataState
-> {
+  PerformanceDataState> {
   orderByFieldArray = [
     { value: "EXECUTION_COUNT", label: "Execution count" },
     { value: "TOTAL_WORKER_TIME", label: "Total worker time" },
@@ -50,15 +49,16 @@ export class PerformanceData extends React.Component<
     };
 
     this.state = initialState;
+    
+  }
+
+  componentDidMount() {
+    var initialState = this.state;
     this.getPerformanceData(
       initialState.numberOfQueries,
       initialState.orderByField,
       initialState.orderBySort
     );
-  }
-
-  componentDidMount() {
-    //do something when component is ready
   }
 
   getPerformanceData = function(numberOfQueries, orderByField, orderBySort) {

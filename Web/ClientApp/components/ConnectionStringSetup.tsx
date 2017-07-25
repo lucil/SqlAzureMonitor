@@ -1,6 +1,6 @@
 import * as React from "react";
 import axios from 'axios';
-import Img from 'react-image'
+import * as NProgress from "nprogress"
 
 export class ConnectionStringSetup extends React.Component<any, any> {
 
@@ -63,6 +63,7 @@ export class ConnectionStringSetup extends React.Component<any, any> {
   }
 
   submitConnectionString = function () {
+   
     var self = this;
     var connectionstring = JSON.stringify({
       value: this.state.connectionString
@@ -72,6 +73,7 @@ export class ConnectionStringSetup extends React.Component<any, any> {
         "Content-Type": "application/json"
       }
     }).then(function (response) {
+      
       var checkResult = response.data;
       switch (checkResult) {
         case 1:

@@ -2,6 +2,7 @@ import * as React from "react";
 import "isomorphic-fetch";
 import { Link } from "react-router";
 import axios from "axios";
+import shortid from "shortid";
 
 
 export class QueryData extends React.Component<any, CurrentQueryState> {
@@ -9,7 +10,7 @@ export class QueryData extends React.Component<any, CurrentQueryState> {
     super();
     this.state = { queries: [], sessions: [], loading: true };
 
-    this.refreshPinalDaveData();
+    this.refreshCurrentlyExecutingQueries();
     this.refreshWhoData();
   }
 
@@ -22,7 +23,7 @@ export class QueryData extends React.Component<any, CurrentQueryState> {
           type="button"
           className="btn btn-primary az-margin-bottom"
           onClick={() => {
-            self.refreshPinalDaveData();
+            self.refreshCurrentlyExecutingQueries();
           }}
         >
           Refresh
@@ -42,7 +43,7 @@ export class QueryData extends React.Component<any, CurrentQueryState> {
           </thead>
           <tbody>
             {this.state.queries.map(q =>
-              <tr key={q.spid}>
+              <tr key={shortid.generate()}>
                 <td><strong>{q.spid}</strong></td>
                 <td>{q.status}</td>
                 <td>{q.command}</td>
@@ -106,7 +107,7 @@ export class QueryData extends React.Component<any, CurrentQueryState> {
             </thead>
             <tbody>
               {this.state.sessions.map(q =>
-                <tr key={q.spid}>
+                <tr key={shortid.generate()}>
                   <td><strong>{q.spid}</strong></td>
                   <td>{q.status}</td>
                   <td>{q.login}</td>
@@ -148,7 +149,7 @@ export class QueryData extends React.Component<any, CurrentQueryState> {
     );
   }
 
-  refreshPinalDaveData = function() {
+  refreshCurrentlyExecutingQueries = function() {
     axios
       .get("/api/query/currentqueries")
       .then(response => response.data as Promise<CurrentQuery[]>)
@@ -181,7 +182,7 @@ export class QueryData extends React.Component<any, CurrentQueryState> {
         } else {
           switch (CALL) {
             case "PINAL_DAVE":
-              this.refreshPinalDaveData();
+              this.refreshCurrentlyExecutingQueries();
               break;
             case "WHO":
               this.refreshWhoData();

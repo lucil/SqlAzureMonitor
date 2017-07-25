@@ -7,6 +7,7 @@ const initialState = {
   avgCpu: 20,
   maxCpu: 80,
   maxDtu: 100,
+  intervalId: '',
   labels: ["January", "February", "March", "April", "May", "June", "July"],
   datasets: [
     {
@@ -46,7 +47,7 @@ const Graph = React.createClass({
       return result;
     };
 
-    const fixDateTime = function(date) {
+    const fixDateTime = function (date) {
       var hours = date.substr(11, 2);
       var minutes = date.substr(14, 2);
       var seconds = date.substr(17, 2);
@@ -56,7 +57,7 @@ const Graph = React.createClass({
       return utcAdjustedHours + ":" + minutes + ":" + seconds;
     };
 
-    const getData = function() {
+    const getData = function () {
       axios
         .get("/api/realtimedata/cpu")
         .then(response => response.data as Promise<RealTimeRow[]>)
@@ -76,11 +77,11 @@ const Graph = React.createClass({
           //calcolo l'average cpu
           var avg = 0;
           var avgCpuArr = data.map(row => row.avgCpuPercent);
-          if (avgCpuArr.length){
-              var avgCalc = sumArray(avgCpuArr) / avgCpuArr.length;
-              avg = parseFloat(avgCalc.toFixed(3));
-          } 
-            
+          if (avgCpuArr.length) {
+            var avgCalc = sumArray(avgCpuArr) / avgCpuArr.length;
+            avg = parseFloat(avgCalc.toFixed(3));
+          }
+
           //calcolo il max della cpu
           var maxCpu = Math.max.apply(Math, avgCpuArr).toFixed(3);
 
@@ -90,12 +91,15 @@ const Graph = React.createClass({
 
           newDataSet.data = newCpuData;
 
+          var intervalId = _this.state.intervalId;
+
           var newState = {
             ...initialState,
             avgCpu: avg,
             maxCpu: maxCpu,
             maxDtu: absoluteDtu,
             labels: newLabels,
+            intervalId: intervalId,
             datasets: [newDataSet]
           };
 
@@ -105,9 +109,17 @@ const Graph = React.createClass({
 
     getData();
 
-    setInterval(function() {
+    var intervalId = setInterval(function () {
       getData();
     }, 15000);
+
+    this.state.intervalId = intervalId;
+
+  },
+
+  componentWillUnmount() {
+    if(this.state.intervalId)
+      clearInterval(this.state.intervalId);
   },
 
   render() {

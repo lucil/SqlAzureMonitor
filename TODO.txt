@@ -1,3 +1,5 @@
+- add loader bar (OK)
+- change favicon (OK)
 - check user has access to monitor DMV before connection
 - fix mobile visualization
 - react check if connection string is in session and redirect to connectionstring page
