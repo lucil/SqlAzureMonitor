@@ -2,8 +2,9 @@
 
 ![alt text](https://github.com/lucil/SqlAzureMonitor/blob/master/Web/ClientApp/images/Logo.png)
 
-A fast way to view how your sql azure database is performing.
-[Show me the magic!](http://sqlazuremonitor.azurewebsites.net/)
+This project is discontinued. 
+You cane use the free monitoring service. [SqlAzureMonitor](https://sqlazuremonitor.com/)
+
 
 ## Logo and favicon
 The logo and the favicon were made with love by [G10](https://github.com/zuologio)
