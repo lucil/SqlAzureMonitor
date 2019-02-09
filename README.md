@@ -2,8 +2,7 @@
 
 ![alt text](https://github.com/lucil/SqlAzureMonitor/blob/master/Web/ClientApp/images/Logo.png)
 
-This project is discontinued. 
-You cane use the free monitoring service. [SqlAzureMonitor](https://sqlazuremonitor.com/)
+This project is discontinued.
 
 
 ## Logo and favicon
